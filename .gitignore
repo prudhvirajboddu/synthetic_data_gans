@@ -3,3 +3,4 @@
 #folders
 .vscode
 __pycache__
+celeba/*/*.jpg
