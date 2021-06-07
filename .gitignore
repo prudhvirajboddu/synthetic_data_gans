@@ -1,5 +1,5 @@
 #files
-*.jpg
+# *.jpg
 #folders
 .vscode
 __pycache__
