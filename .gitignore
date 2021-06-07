@@ -1,2 +1,5 @@
 #files
 *.jpg
+#folders
+.vscode
+__pycache__
