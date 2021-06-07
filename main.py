@@ -31,7 +31,7 @@ dataroot = "/home/prudhvi/synthetic_data_gans/images/"
 workers = 2
 
 # Batch size during training
-batch_size = 32
+batch_size = 16
 
 # Spatial size of training images. All images will be resized to this
 #   size using a transformer.
@@ -215,8 +215,12 @@ for epoch in range(num_epochs):
         real_cpu = data[0].to(device)
         b_size = real_cpu.size(0)
         label = torch.full((b_size,), real_label, dtype=torch.float, device=device)
+
+        label = label.unsqueeze(1)
         # Forward pass real batch through D
         output = netD(real_cpu).view(-1)
+
+        # output = output.view(output.size(0), -1)
         # Calculate loss on all-real batch
         errD_real = criterion(output, label)
         # Calculate gradients for D in backward pass
