@@ -31,7 +31,7 @@ dataroot = "/home/prudhvi/synthetic_data_gans/images/"
 workers = 2
 
 # Batch size during training
-batch_size = 32
+batch_size = 8
 
 # Spatial size of training images. All images will be resized to this
 #   size using a transformer.
